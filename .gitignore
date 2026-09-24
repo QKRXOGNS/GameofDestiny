@@ -59,9 +59,9 @@ bld/
 .nuget/
 nuget.config
 
-# Package Manager
+# Package Manager - manifest와 packages-lock.json은 포함해야 다른 환경에서 동일 패키지 설치 가능
 /Packages/packages-lock.json
-/Packages/manifest.json
+# /Packages/manifest.json  ← 주석 처리하여 Git에 포함
 
 # OS generated
 .DS_Store
@@ -72,5 +72,5 @@ nuget.config
 ehthumbs.db
 Thumbs.db
 
-# Large binary files (StreamingAssets)
-Assets/StreamingAssets/
+# Large binary files (StreamingAssets) - Git LFS로 관리하므로 .gitignore에서 제외
+# Assets/StreamingAssets/
