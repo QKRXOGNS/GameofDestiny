@@ -597,7 +597,7 @@ MonoBehaviour:
   baseOffset: {x: 0, y: 8, z: -8}
   zoomSpeed: 2
   minZoom: 1
-  maxZoom: 4
+  maxZoom: 3
   currentZoom: 2
   baseRotationX: 45
   rotationSpeed: 3
