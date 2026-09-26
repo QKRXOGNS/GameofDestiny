@@ -1,3 +1,6 @@
+# Unity meta 파일 - 항상 LF 줄 끝 사용 (Windows/Mac 교차 플랫폼 호환성)
+*.meta text eol=lf
+
 # Unity 네이티브 바이너리 - LlamaLib
 *.dll filter=lfs diff=lfs merge=lfs -text
 *.lib filter=lfs diff=lfs merge=lfs -text
