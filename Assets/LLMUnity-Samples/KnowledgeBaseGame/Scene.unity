@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -2880,6 +2876,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -4210,11 +4207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "How to solve\n\nCrack the case by interviewing the three robot servants:
-    the Butler, the Maid and the Chef.\n\nInterview the robots and find out:\n 1.
-    Who stole the diamond?\n 2. What room it is hidden in?\n 3. What container it
-    is in?\n\nSelect the bot you want to question.\nType your question on the text
-    box and press Enter."
+  m_Text: "How to solve\n\nCrack the case by interviewing the three robot servants: the Butler, the Maid and the Chef.\n\nInterview the robots and find out:\n 1. Who stole the diamond?\n 2. What room it is hidden in?\n 3. What container it is in?\n\nSelect the bot you want to question.\nType your question on the text box and press Enter."
 --- !u!222 &1259406244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4381,8 +4374,7 @@ MonoBehaviour:
   overflowTargetRatio: 0.5
   overflowSummarizePrompt: 
   _slot: -1
-  _systemPrompt: A chat between a curious human and an artificial intelligence assistant.
-    The assistant gives helpful, detailed, and polite answers to the human's questions.
+  _systemPrompt: A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.
 --- !u!1 &1278063793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,6 +5380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535596278}
   - component: {fileID: 1535596277}
+  - component: {fileID: 1535596279}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5403,15 +5396,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535596276}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 13
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -5455,8 +5447,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
+  m_ForceVisible: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1535596278
 Transform:
   m_ObjectHideFlags: 0
@@ -5472,6 +5468,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1535596279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535596276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &1556622913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,15 +5955,13 @@ MonoBehaviour:
     Communication Link Open
 
 
-    RE:
-    OPEN CASE: MacGuffin Diamond -- Stolen
+    RE: OPEN CASE: MacGuffin Diamond -- Stolen
 
 
     Detective, your solution is incorrect.
 
 
-    Did
-    we hire the right person for this job?'
+    Did we hire the right person for this job?'
 --- !u!222 &1626244060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6698,21 +6721,17 @@ MonoBehaviour:
   m_Text: 'Col Gold reported the diamond missing during dinner.
 
 
-    The glass case
-    it was in was smashed.
+    The glass case it was in was smashed.
 
 
     The Colonel called the police on his cell phone.
 
-    All
-    guests refused to speak to the police and retained lawyers.
+    All guests refused to speak to the police and retained lawyers.
 
 
-    The robots
-    know a lot about the house.
+    The robots know a lot about the house.
 
-    The robots do not know who actually took the
-    diamond or where it is now.'
+    The robots do not know who actually took the diamond or where it is now.'
 --- !u!222 &1839907272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6876,8 +6895,7 @@ MonoBehaviour:
 
     Office (unused?)
 
-    Dining Room
-    (Dinner)
+    Dining Room (Dinner)
 
     Study (Speech)
 
@@ -6886,15 +6904,13 @@ MonoBehaviour:
 
     Events
 
-    Welcoming
-    (Maid, Butler)
+    Welcoming (Maid, Butler)
 
     Speech (Maid, Butler)
 
     Cocktails (Butler)
 
-    Dinner
-    (Maid, Butler)
+    Dinner (Maid, Butler)
 
     Call to Police (unseen)'
 --- !u!222 &1927269721
@@ -7147,19 +7163,16 @@ MonoBehaviour:
 
     - What happened during dinner?
 
-    - Where were
-    you during cocktails?
+    - Where were you during cocktails?
 
     - What was for dinner?
 
 
-    To solve the case, hit
-    the [SOLVE] Button
+    To solve the case, hit the [SOLVE] Button
 
     To see a map of the house, hit the [MAP] button
 
-    To
-    see the police notes, hit the [POLICE NOTES] button
+    To see the police notes, hit the [POLICE NOTES] button
 
 
     Get on it, Detective!'
@@ -7562,16 +7575,16 @@ MonoBehaviour:
   _parallelPrompts: 1
   _contextSize: 8192
   _batchSize: 512
-  _model: 
+  _model: qwen3-4b-thinking-2507.Q8_0.gguf
   _flashAttention: 0
   _reasoning: 0
   _lora: 
   _loraWeights: 
   dontDestroyOnLoad: 1
   _embeddingsOnly: 0
-  _embeddingLength: 0
+  _embeddingLength: 2560
   minContextLength: 0
-  maxContextLength: 0
+  maxContextLength: 262144
 --- !u!4 &2142407557
 Transform:
   m_ObjectHideFlags: 0
